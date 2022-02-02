@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Source\\Repos\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj": {}
+    "C:\\Users\\hp\\Desktop\\P125-ManyToMany\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Source\\Repos\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj": {
+    "C:\\Users\\hp\\Desktop\\P125-ManyToMany\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Source\\Repos\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\P125-ManyToMany\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj",
         "projectName": "FiorelloBack",
-        "projectPath": "C:\\Users\\hp\\Source\\Repos\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\P125-ManyToMany\\FiorelloBack\\FiorelloBack\\FiorelloBack.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Source\\Repos\\FiorelloBack\\FiorelloBack\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\P125-ManyToMany\\FiorelloBack\\FiorelloBack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.22, )"

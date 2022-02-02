@@ -5,7 +5,7 @@
 
 
 <div class="container">
-    <div class="row">
+    <div class="row mb-5">
         <a asp-controller="Flower" asp-action="Create" class="btn btn-success btn-icon-text">
             <i class="mdi mdi-upload btn-icon-prepend"></i>
             Create
@@ -40,7 +40,7 @@
                     <td>
                         @flower.Id
                     </td>
-                    @if (@flower.FlowerImages.FirstOrDefault(x => x.IsMain == true).Image.Contains("https://"))
+                    @if (flower.FlowerImages.FirstOrDefault(x => x.IsMain == true).Image.Contains("https://"))
                     {
                         <td>
                             <img src="@flower.FlowerImages.FirstOrDefault(x=>x.IsMain==true).Image" />
@@ -88,5 +88,41 @@
             </tbody>
         </table>
     </div>
+    <div class="row justify-content-center">
+        <nav aria-label="...">
+            <ul class="pagination">
+                @if (ViewBag.CurrentPage == 1)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Flower" asp-action="Index" asp-route-page="@(ViewBag.CurrentPage-1)" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                }
+                @for (int i = 1; i <= ViewBag.TottalPage; i++)
+                {
+                    <li class="page-item @(ViewBag.CurrentPage==i ? "active":"")" style="@(ViewBag.CurrentPage==i ? "pointer-events:none":"")"><a class="page-link" asp-controller="Flower" asp-action="Index" asp-route-page="@i">@i</a></li>
+                }
+                @if (ViewBag.CurrentPage == ViewBag.TottalPage)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                    
+                    }
+                else
+                {
+                    <li class="page-item">
+                        <a asp-controller ="Flower" asp-action ="Index" asp-route-page ="@(ViewBag.CurrentPage+1)" class="page-link">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
 </div>
+
 

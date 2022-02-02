@@ -32,10 +32,7 @@ namespace FiorelloBack.Models
         public List<int> CategoryIds { get; set; }
         [NotMapped]
         public List<IFormFile> ImageFilies { get; set; }
-        //public Flower()
-        //{
-        //    FlowerCategories = new List<FlowerCategory>();
-        //}
-
+        [NotMapped]
+        public List<int> ImageIds { get; set; }
     }
 }

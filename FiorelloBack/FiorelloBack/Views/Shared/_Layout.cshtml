@@ -188,110 +188,24 @@
 
 
                                 </li>
-                                <li>
-                                    <a href=""><span>BLOG</span></a>
-
-                                    <div class="blogUlDiv">
-                                        <ul class="blog">
-                                            <li><a href=""><span>MASONRY</span></a></li>
-                                            <li><a href=""><span>STANDART</span></a></li>
-                                            <li class="post">
-                                                <a href="">
-                                                    <span>POST TYPES</span><i class="fas fa-chevron-right"></i>
-                                                </a>
-
-
-                                                <ul class="bloginlinks">
-                                                    <li><a href=""><span>STANDART</span></a></li>
-                                                    <li><a href=""><span>LINK</span></a></li>
-                                                    <li><a href=""><span>GALLERY</span></a></li>
-                                                    <li><a href=""><span>QUOTE</span></a></li>
-                                                    <li><a href=""><span>AUDIO</span></a></li>
-                                                    <li><a href=""><span>VIDEO</span></a></li>
-                                                </ul>
-
-
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
-                                </li>
-                                <li>
-                                    <a href=""><span>ELEMENTS</span></a>
-
-                                    <div class="elementsUlDiv">
-                                        <ul class="elements">
-                                            <li class="classicli">
-                                                <a href="">
-                                                    <i class="fas fa-chevron-left"></i><span>CLASSIC</span>
-                                                </a>
-
-                                                <ul class="classic">
-                                                    <li><a href=""><span>ACCORDIONS</span></a></li>
-                                                    <li><a href=""><span>TABS</span></a></li>
-                                                    <li><a href=""><span>BUTTONS</span></a></li>
-                                                    <li><a href=""><span>VIDEO BUTTON</span></a></li>
-                                                    <li><a href=""><span>CONTACT FORM</span></a></li>
-                                                </ul>
-
-                                            </li>
-                                            <li class="infographicli">
-                                                <a href="">
-                                                    <i class="fas fa-chevron-left"></i><span>INFOGRAPHIC</span>
-                                                </a>
-
-                                                <ul class="infographic">
-                                                    <li><a href=""><span>BLOGLIST</span></a></li>
-                                                    <li><a href=""><span>COUNTERS</span></a></li>
-                                                    <li><a href=""><span>COUNTDOWN</span></a></li>
-                                                    <li><a href=""><span>GOOGLE MAPS</span></a></li>
-                                                    <li><a href=""><span>PROGRESS BAR</span></a></li>
-                                                    <li><a href=""><span>PIE CHAPS</span></a></li>
-                                                </ul>
-
-                                            </li>
-                                            <li class="interactiveli">
-                                                <a href="">
-                                                    <i class="fas fa-chevron-left"></i><span>INTERACTIVE</span>
-                                                </a>
-
-                                                <ul class="interactive">
-                                                    <li><a href=""><span>IMAGE GALLERY</span></a></li>
-                                                    <li><a href=""><span>TESTMIONALS</span></a></li>
-                                                    <li><a href=""><span>TEAM</span></a></li>
-                                                    <li><a href=""><span>BANNER</span></a></li>
-                                                    <li><a href=""><span>SHOP LIST</span></a></li>
-                                                    <li><a href=""><span>PORTFOLIO LIST</span></a></li>
-                                                </ul>
-
-                                            </li>
-                                            <li class="typographyli">
-                                                <a href="">
-                                                    <i class="fas fa-chevron-left"></i><span>TYPOGRAPHY</span>
-                                                </a>
-
-
-                                                <ul class="typography">
-                                                    <li><a href=""><span>HEADINGS</span></a></li>
-                                                    <li><a href=""><span>COLUMNS</span></a></li>
-                                                    <li><a href=""><span>SECTION TITLE</span></a></li>
-                                                    <li><a href=""><span>BLACKQUOTE</span></a></li>
-                                                    <li><a href=""><span>DROPCAPS</span></a></li>
-                                                    <li><a href=""><span>HIGHLIGHTS</span></a></li>
-                                                    <li><a href=""><span>SEPERATORS</span></a></li>
-                                                    <li><a href=""><span>CUSTOM FONT</span></a></li>
-                                                </ul>
-
-                                            </li>
-                                        </ul>
-                                    </div>
-
-
-
-                                </li>
-
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a asp-controller="account" asp-action="login">Login</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="account" asp-action="Register">Register</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a asp-controller="account" asp-action="Edit">@User.Identity.Name</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="account" asp-action="Logout">Logout</a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                         <div class="search-shopping col-lg-3">

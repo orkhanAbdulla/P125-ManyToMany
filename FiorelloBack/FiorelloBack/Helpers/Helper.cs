@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace KontaktHome.Helpers
+namespace FiorelloBack.Helpers
 {
     public static class Helper
     {

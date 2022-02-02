@@ -16,6 +16,7 @@ namespace FiorelloBack.Controllers
         {
             _context = context;
         }
+       
         public IActionResult Details(int id,int categoryId)
         {
             Flower flower = _context.Flowers.Include(f=>f.Campaign).Include(f=>f.FlowerImages).Include(f=>f.FlowerCategories).ThenInclude(fc=>fc.Category).FirstOrDefault(f => f.Id == id);
